@@ -1,6 +1,6 @@
 {
-	"name": "dogecoin",
-	"displayName": "Dogecoin",
+	"name": "dogecoin-statusbar",
+	"displayName": "Dogecoin Statusbar",
 	"description": "Realtime dogecoin price in status bar",
 	"version": "0.0.1",
 	"engines": {
