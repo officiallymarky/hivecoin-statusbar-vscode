@@ -4,6 +4,10 @@
 	"description": "Realtime dogecoin price in status bar",
 	"version": "0.0.1",
 	"publisher": "ArtemKolichenkov",
+	"repository": {
+	 	"type": "git",
+		"url": "https://github.com/ArtemKolichenkov/dogecoin-statusbar-vscode"
+	},
 	"engines": {
 		"vscode": "^1.53.0"
 	},
