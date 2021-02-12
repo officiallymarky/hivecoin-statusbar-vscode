@@ -10,10 +10,10 @@ Adds an item on the status bar where you can see:
 - When price was last updated at [coingecko.com](https://www.coingecko.com/)
 
 USD: 
-![Example in USD](/images/screenshotUSD.png)  
+![Example in USD](images/screenshotUSD.png)  
 
 EUR: 
-![Example in EUR](/images/screenshotEUR.png)
+![Example in EUR](images/screenshotEUR.png)
 
 ## Usage
 
