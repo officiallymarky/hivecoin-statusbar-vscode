@@ -19,7 +19,7 @@ EUR:
 
 ## Usage
 
-You can set currency by opening the VSCode quick menu (Ctrl/CMD + Shift + P) and searching for "Dogecoin Statusbar: Set Currency"
+You can set currency by opening the VSCode quick menu (`Ctrl`/`CMD` + `Shift` + `P`) and searching for "Dogecoin Statusbar: Set Currency"
 
 ## Authors
 
