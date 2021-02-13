@@ -122,7 +122,7 @@ const startMonitoring = () => {
   } else {
     dogeStatusBarItem.text = `$(rocket) Fetching Đoge price...`;
     fetchDogecoinData();
-    fetchIntervalId = setInterval(fetchDogecoinData, 20000);
+    fetchIntervalId = setInterval(fetchDogecoinData, 30000);
   }
 };
 
