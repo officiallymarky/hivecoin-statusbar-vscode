@@ -24,7 +24,7 @@ You can set currency by opening the VSCode quick menu (`Ctrl`/`CMD` + `Shift` + 
 ## Authors
 
 Forked from 
-[Artem Kolichenkov](https://github.com/ArtemKolichenkov)
+Artem Kolichenkov's [Dogecoin Status Bar](https://github.com/ArtemKolichenkov/dogecoin-statusbar-vscode)
 
 
 
