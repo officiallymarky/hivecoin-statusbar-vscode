@@ -12,10 +12,10 @@ Adds an item on the status bar where you can see:
 Prices are coming via [Coingecko API](https://www.coingecko.com/en/api). Usual update time is ~1 minute, but I noticed it can be up to 5 minutes for the price to change. The extension queries the API every 30 seconds.
 
 USD: 
-![Example in USD](/images/screenshotUSD.png)  
+![Example in USD](https://i.imgur.com/rrPkEb6.png)  
 
 EUR: 
-![Example in EUR](/images/screenshotEUR.png)
+![Example in EUR](https://i.imgur.com/P0qcanR.png)
 
 ## Usage
 
