@@ -1,11 +1,11 @@
-# Dogecoin statusbar 🚀
+# Hivecoin statusbar 🚀
 
-Realtime dogecoin price in status bar, multiple currencies.
+Realtime Hive price in status bar, multiple currencies.
 
 ## Features
 
 Adds an item on the status bar where you can see:
-- Dogecoin price in selected currency
+- Hive price in selected currency
 - Price change over 24 hours
 - When price was last updated at [coingecko.com](https://www.coingecko.com/)
 
@@ -19,25 +19,17 @@ EUR:
 
 ## Usage
 
-You can set currency by opening the VSCode quick menu (`Ctrl`/`CMD` + `Shift` + `P`) and searching for "Dogecoin Statusbar: Set Currency"
+You can set currency by opening the VSCode quick menu (`Ctrl`/`CMD` + `Shift` + `P`) and searching for "Hivecoin Statusbar: Set Currency"
 
 ## Authors
 
+Forked from 
 [Artem Kolichenkov](https://github.com/ArtemKolichenkov)
 
-If you find this project useful please consider making a donation.
 
-**DOGE:** `DGWXjYeGrGpA4RFKKifMKHd9q7RyHXoE6x`
-
-**BTC:** `bc1q9gv5whv265zcwu93ecurp5tlg5khj667yx3zpl`
-
-**ADA:** `addr1q9h422c2l7vmm9wfxa99am59m6u3lm72uu0yy0tlgjsln8re23euvu5tr04kxrnjjtsppvxtp8fxrjzdw3q6pwwjsndsnrn3f3`
-
-<a href="https://www.buymeacoffee.com/artemjs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-red.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 ## Links
-- [VSCode marketplace](https://marketplace.visualstudio.com/items?itemName=ArtemKolichenkov.dogecoin-statusbar)
-- [GitHub](https://github.com/ArtemKolichenkov/dogecoin-statusbar-vscode)
+- [GitHub](https://github.com/officiallymarky/hivecoin-statusbar-vscode)
 
 ## Contributing
 

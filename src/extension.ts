@@ -1,5 +1,4 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+
 import * as vscode from "vscode";
 import fetch from "node-fetch";
 
@@ -38,6 +37,7 @@ const CURRENCIES = [
   { name: "SAR", symbol: "﷼" },
   { name: "MYR", symbol: "RM" },
   { name: "DOGE", symbol: "Đ" },
+  { name: "HIVE", symbol: "H" },
 ];
 
 type CurrencyObject = {
@@ -67,7 +67,7 @@ const CURRENCY_SELECTION = CURRENCIES.map(
 );
 
 let currency: CurrencyObject = CURRENCIES[0];
-let dogeStatusBarItem: vscode.StatusBarItem;
+let hiveStatusBarItem: vscode.StatusBarItem;
 let price: number;
 let change: string;
 let updatedSecondsAgo: number = 0;
@@ -78,16 +78,16 @@ export function activate(context: vscode.ExtensionContext) {
   LocalStorageService.globalState = context.globalState;
   const storedCurrency = LocalStorageService.getCurrency();
   if (storedCurrency) {
-	  currency = storedCurrency;
+    currency = storedCurrency;
   }
 
-  dogeStatusBarItem = vscode.window.createStatusBarItem(
+  hiveStatusBarItem = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Right,
     100
   );
 
   let disposable = vscode.commands.registerCommand(
-    "dogecoin.setCurrency",
+    "hivecoin.setCurrency",
     () => {
       vscode.window.showQuickPick(CURRENCY_SELECTION).then((selection) => {
         if (selection) {
@@ -95,7 +95,7 @@ export function activate(context: vscode.ExtensionContext) {
             CURRENCIES.find(
               ({ name }) =>
                 name === selection.substring(0, 3) ||
-                name === selection.substring(0, 4) // 1 DOGE = 1 DOGE easter egg
+                name === selection.substring(0, 4)
             ) ?? currency;
           LocalStorageService.updateCurrency(currency);
           startMonitoring();
@@ -116,29 +116,29 @@ const startMonitoring = () => {
     clearInterval(updateIntervalId);
     updateIntervalId = null;
   }
-  dogeStatusBarItem.show();
-  if (currency.name === "DOGE") {
-    dogeStatusBarItem.text = `$(rocket) 1 Đoge = 1 Đoge`;
+  hiveStatusBarItem.show();
+  if (currency.name === "HIVE") {
+    hiveStatusBarItem.text = `$(account) 1 Đoge = 1 Đoge`;
   } else {
-    dogeStatusBarItem.text = `$(rocket) Fetching Đoge price...`;
-    fetchDogecoinData();
-    fetchIntervalId = setInterval(fetchDogecoinData, 30000);
+    hiveStatusBarItem.text = `$(account) Fetching Hive price...`;
+    fetchHiveData();
+    fetchIntervalId = setInterval(fetchHiveData, 30000);
   }
 };
 
-const fetchDogecoinData = async (): Promise<void> => {
+const fetchHiveData = async (): Promise<void> => {
   const response = await fetch(
-    `https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=${currency.name.toLowerCase()}&include_24hr_change=true&include_last_updated_at=true`
+    `https://api.coingecko.com/api/v3/simple/price?ids=hive&vs_currencies=${currency.name.toLowerCase()}&include_24hr_change=true&include_last_updated_at=true`
   );
-  const { dogecoin } = await response.json();
-  price = dogecoin[currency.name.toLowerCase()];
-  const changeIn24h = dogecoin[`${currency.name.toLowerCase()}_24h_change`];
+  const { hive } = await response.json();
+  price = hive[currency.name.toLowerCase()];
+  const changeIn24h = hive[`${currency.name.toLowerCase()}_24h_change`];
   if (changeIn24h < 0) {
     change = changeIn24h.toFixed(2).toString();
   } else {
     change = `+${changeIn24h.toFixed(2).toString()}`;
   }
-  updatedSecondsAgo = dogecoin.last_updated_at;
+  updatedSecondsAgo = hive.last_updated_at;
   if (!updateIntervalId) {
     updateIntervalId = setInterval(updateStatusBarItem, 1000);
   }
@@ -146,11 +146,10 @@ const fetchDogecoinData = async (): Promise<void> => {
 
 const updateStatusBarItem = (): void => {
   if (price && change) {
-    dogeStatusBarItem.text = `$(rocket) Đoge is ${
-      currency.symbol
-    }${price} | ${change}% | ${getRelativeTime()}`;
+    hiveStatusBarItem.text = `$(account) Hive is ${currency.symbol
+      }${price} | ${change}% | ${getRelativeTime()}`;
   } else {
-    dogeStatusBarItem.text = `$(rocket) wow, such error`;
+    hiveStatusBarItem.text = `$(account) wow, such error`;
   }
 };
 

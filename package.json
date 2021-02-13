@@ -1,12 +1,12 @@
 {
-	"name": "dogecoin-statusbar",
-	"displayName": "Dogecoin Statusbar",
-	"description": "Realtime dogecoin price in status bar",
-	"version": "0.0.4",
-	"publisher": "ArtemKolichenkov",
+	"name": "hivecoin-statusbar",
+	"displayName": "Hivecoin Statusbar",
+	"description": "Realtime Hive price in status bar",
+	"version": "0.0.5",
+	"publisher": "officiallymarky",
 	"repository": {
-	 	"type": "git",
-		"url": "https://github.com/ArtemKolichenkov/dogecoin-statusbar-vscode"
+		"type": "git",
+		"url": "https://github.com/officiallymarky/hivecoin-statusbar-vscode"
 	},
 	"icon": "images/dogecoin-statusbar-icon.png",
 	"engines": {
@@ -22,8 +22,8 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "dogecoin.setCurrency",
-				"title": "Dogecoin Statusbar: Set Currency"
+				"command": "hivecoin.setCurrency",
+				"title": "Hive Statusbar: Set Currency"
 			}
 		]
 	},
