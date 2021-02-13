@@ -40,20 +40,25 @@ const CURRENCIES = [
   { name: "DOGE", symbol: "Đ" },
 ];
 
+type CurrencyObject = {
+  name: string;
+  symbol: string;
+};
+
 class LocalStorageService {
   static globalState: vscode.ExtensionContext["globalState"];
 
   static getCurrency() {
-    const currency = this.globalState.get<string>("currency");
-    if (currency) {
-      return JSON.parse(currency);
+    const storedCurrency = this.globalState.get<string>("currency");
+    if (storedCurrency) {
+      return JSON.parse(storedCurrency);
     } else {
       return null;
     }
   }
 
-  static updateCurrency(currency: string[]) {
-    this.globalState.update("currency", JSON.stringify(currency));
+  static updateCurrency(currencyToStore: CurrencyObject) {
+    this.globalState.update("currency", JSON.stringify(currencyToStore));
   }
 }
 
@@ -61,7 +66,7 @@ const CURRENCY_SELECTION = CURRENCIES.map(
   ({ name, symbol }) => `${name} ${symbol}`
 );
 
-let currency: { name: string; symbol: string } = CURRENCIES[0];
+let currency: CurrencyObject = CURRENCIES[0];
 let dogeStatusBarItem: vscode.StatusBarItem;
 let price: number;
 let change: string;
@@ -92,6 +97,7 @@ export function activate(context: vscode.ExtensionContext) {
                 name === selection.substring(0, 3) ||
                 name === selection.substring(0, 4) // 1 DOGE = 1 DOGE easter egg
             ) ?? currency;
+          LocalStorageService.updateCurrency(currency);
           startMonitoring();
         }
       });
