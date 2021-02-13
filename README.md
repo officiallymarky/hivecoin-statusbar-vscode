@@ -31,6 +31,8 @@ If you find this project useful please consider making a donation.
 
 **BTC:** `bc1q9gv5whv265zcwu93ecurp5tlg5khj667yx3zpl`
 
+**ADA:** `addr1q9h422c2l7vmm9wfxa99am59m6u3lm72uu0yy0tlgjsln8re23euvu5tr04kxrnjjtsppvxtp8fxrjzdw3q6pwwjsndsnrn3f3`
+
 <a href="https://www.buymeacoffee.com/artemjs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-red.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 ## Links
