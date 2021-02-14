@@ -3,12 +3,12 @@
 	"displayName": "Hivecoin Statusbar",
 	"description": "Realtime Hive price in status bar",
 	"version": "0.0.5",
-	"publisher": "officiallymarky",
+	"publisher": "OfficiallyMarky",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/officiallymarky/hivecoin-statusbar-vscode"
 	},
-	"icon": "images/dogecoin-statusbar-icon.png",
+	"icon": "images/Logo_transparent1.png",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
